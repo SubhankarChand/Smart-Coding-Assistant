@@ -1,0 +1,291 @@
+DSA & Coding Problems
+
+Reverse a Linked List
+
+Input: 1 -> 2 -> 3 -> 4
+
+Output: 4 -> 3 -> 2 -> 1
+
+Approach: Iterative or recursive pointer reversal.
+
+Detect Cycle in Linked List
+
+Use Floyd’s Cycle-Finding Algorithm (Tortoise & Hare).
+
+Find Missing Number
+
+Given array 1..n, find missing element using XOR or sum formula.
+
+Maximum Subarray Sum (Kadane’s Algorithm)
+
+Input: [-2,1,-3,4,-1,2,1,-5,4]
+
+Output: 6 (Subarray [4,-1,2,1])
+
+Implement Stack using Queues
+
+Use two queues to mimic LIFO.
+
+Shortest Path in Graph
+
+Use Dijkstra or BFS depending on weighted/unweighted edges.
+
+Topological Sort
+
+For Directed Acyclic Graphs using DFS or Kahn’s Algorithm.
+
+Longest Increasing Subsequence
+
+Dynamic programming O(n²) or binary search O(n log n).
+
+0/1 Knapsack Problem
+
+DP-based problem maximizing profit with weight constraints.
+
+Binary Tree Level Order Traversal
+
+Use Queue (BFS).
+
+AI / ML / DL Problems
+
+Predict House Prices
+
+Dataset: features like size, location, rooms.
+
+Algorithm: Linear Regression.
+
+Evaluate with RMSE or R² score.
+
+Image Classification
+
+Dataset: CIFAR-10 or custom.
+
+Model: CNN.
+
+Framework: TensorFlow or PyTorch.
+
+Spam Detection
+
+Use NLP preprocessing + Logistic Regression or Naive Bayes.
+
+Sentiment Analysis
+
+Dataset: IMDB reviews.
+
+Model: LSTM or BERT.
+
+Customer Segmentation
+
+Algorithm: K-Means Clustering.
+
+Digit Recognition
+
+Dataset: MNIST.
+
+Model: CNN or MLP.
+
+Recommendation System
+
+Approaches: Collaborative Filtering, Content-based, Hybrid.
+
+Chatbot using RAG
+
+Use LLM + vector store for context-aware answers.
+
+Object Detection
+
+Model: YOLO, Faster R-CNN.
+
+Use bounding boxes for localization.
+
+Time Series Forecasting
+
+Model: LSTM / Prophet.
+
+Application: stock or demand prediction.
+
+Advanced CSE / System Design
+
+Design a URL Shortener (TinyURL)
+
+Design a Cache System (LRU Cache)
+
+Design a Load Balancer
+
+Implement Pagination API
+
+Build a Distributed Logging System
+
+🧩 DSA PROBLEMS
+Arrays
+
+Find the maximum subarray sum (Kadane’s Algorithm)
+
+Rotate array by k steps
+
+Find missing number in range 1…n
+
+Merge two sorted arrays
+
+Move all zeros to the end
+
+Linked List
+
+Reverse a linked list (iterative/recursive)
+
+Detect cycle (Floyd’s algorithm)
+
+Merge two sorted linked lists
+
+Find intersection point
+
+Remove nth node from end
+
+Stacks & Queues
+
+Implement stack using queues
+
+Implement queue using stacks
+
+Next Greater Element
+
+Balanced parentheses
+
+LRU Cache implementation
+
+Trees
+
+Binary tree traversals
+
+Height and diameter of tree
+
+Lowest Common Ancestor (LCA)
+
+Convert BST to sorted DLL
+
+Serialize and deserialize tree
+
+Graphs
+
+BFS & DFS traversal
+
+Detect cycle in directed graph
+
+Shortest path (Dijkstra)
+
+Minimum spanning tree (Prim/Kruskal)
+
+Topological sorting
+
+Dynamic Programming
+
+Fibonacci (memoized)
+
+0/1 Knapsack
+
+Longest Common Subsequence
+
+Matrix Chain Multiplication
+
+Coin Change Problem
+
+Backtracking
+
+N-Queens
+
+Sudoku Solver
+
+Subset Sum
+
+Word Search in matrix
+
+Generate all permutations
+
+🤖 AI / ML / DL PROBLEMS
+Supervised Learning
+
+Predict house prices using Linear Regression
+
+Email spam classification
+
+Titanic survival prediction
+
+Iris dataset classification
+
+Polynomial Regression
+
+Unsupervised Learning
+
+Customer segmentation using K-Means
+
+Dimensionality reduction with PCA
+
+Market basket analysis using Apriori
+
+Deep Learning
+
+MNIST digit classification using CNN
+
+Image classification using Transfer Learning
+
+Object detection using YOLOv5
+
+Sentiment analysis using LSTM
+
+Face recognition using CNN + embeddings
+
+NLP
+
+Text classification using TF-IDF + Naive Bayes
+
+Named Entity Recognition (NER)
+
+Machine Translation with seq2seq
+
+Summarization using Transformer
+
+Chatbot using RAG + LLM
+
+💡 Advanced Topics / Projects
+
+Recommendation System (Collaborative + Content-based)
+
+Fraud Detection using ML
+
+Stock Price Prediction (LSTM)
+
+Fake News Detection (NLP)
+
+Resume Screening AI
+
+AI-powered Code Debugger
+
+Emotion Recognition from Images
+
+AI Chatbot with Custom Knowledge Base
+
+Voice Assistant using Speech Recognition + NLP
+
+Self-learning Game Agent using Reinforcement Learning
+
+⚙️ System Design Problems
+
+Design URL Shortener (TinyURL)
+
+Design Twitter feed
+
+Design Uber’s driver matching system
+
+Design E-commerce recommendation engine
+
+Design Chat System (like WhatsApp)
+
+Design Scalable File Storage (like Google Drive)
+
+Design Distributed Caching (Redis style)
+
+Design API Rate Limiter
+
+Design Notification System
+
+Design Video Streaming Platform (like YouTube)

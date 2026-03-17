@@ -1,0 +1,976 @@
+1. Arrays
+
+Arrays are a collection of elements stored in contiguous memory locations.
+They allow random access using indices.
+
+Common operations:
+
+Traversal: O(n)
+
+Insertion/Deletion: O(n)
+
+Searching (Linear): O(n)
+
+Searching (Binary – sorted array): O(log n)
+
+Example:
+
+arr = [1, 3, 5, 7, 9]
+for x in arr:
+    print(x)
+
+
+Use cases: storing sequential data, lookup tables, dynamic programming.
+
+2. Linked Lists
+
+A linked list is a linear data structure where each element (node) points to the next node.
+
+Types:
+
+Singly Linked List
+
+Doubly Linked List
+
+Circular Linked List
+
+Advantages: Dynamic size, efficient insertions/deletions.
+Disadvantages: No random access.
+
+Example (Python):
+
+class Node:
+    def __init__(self, val):
+        self.val = val
+        self.next = None
+
+3. Stacks and Queues
+
+Stack: LIFO (Last In First Out)
+Used for: Recursion, Expression evaluation, Backtracking.
+
+Queue: FIFO (First In First Out)
+Used for: Scheduling, BFS traversal, buffering.
+
+Example:
+
+from collections import deque
+stack = []
+stack.append(10)
+stack.pop()
+
+queue = deque()
+queue.append(5)
+queue.popleft()
+
+4. Trees and Binary Search Trees
+
+A Tree is a hierarchical data structure.
+A Binary Tree has up to two children per node.
+A Binary Search Tree (BST) maintains sorted order.
+
+Common operations:
+
+Inorder Traversal (sorted output)
+
+Preorder, Postorder
+
+Insert/Delete/Search: O(log n) average
+
+Example:
+
+class Node:
+    def __init__(self, key):
+        self.key = key
+        self.left = self.right = None
+
+5. Graphs
+
+Graphs consist of vertices (nodes) and edges (connections).
+They can be directed/undirected, weighted/unweighted.
+
+Representation:
+
+Adjacency Matrix
+
+Adjacency List
+
+Algorithms:
+
+BFS, DFS
+
+Dijkstra’s shortest path
+
+Topological sort
+
+Union-Find
+
+Use cases: social networks, maps, recommendation systems.
+
+6. Sorting Algorithms
+Algorithm	Time Complexity	Space	Stable
+Bubble Sort	O(n²)	O(1)	✅
+Merge Sort	O(n log n)	O(n)	✅
+Quick Sort	O(n log n)	O(log n)	❌
+Insertion Sort	O(n²)	O(1)	✅
+
+Example (Quick Sort):
+
+def quicksort(arr):
+    if len(arr) <= 1:
+        return arr
+    pivot = arr[len(arr)//2]
+    left = [x for x in arr if x < pivot]
+    middle = [x for x in arr if x == pivot]
+    right = [x for x in arr if x > pivot]
+    return quicksort(left) + middle + quicksort(right)
+
+7. Dynamic Programming
+
+Dynamic Programming (DP) breaks problems into subproblems and stores their results.
+
+Steps:
+
+Define subproblems.
+
+Define recurrence relation.
+
+Use memoization or tabulation.
+
+Example – Fibonacci:
+
+def fib(n, memo={}):
+    if n in memo: return memo[n]
+    if n <= 2: return 1
+    memo[n] = fib(n-1, memo) + fib(n-2, memo)
+    return memo[n]
+
+
+Applications: Knapsack, LIS, Matrix chain multiplication.
+
+8. Machine Learning Overview
+
+Machine Learning (ML) is about enabling systems to learn from data.
+
+Categories:
+
+Supervised: Regression, Classification
+
+Unsupervised: Clustering, Dimensionality Reduction
+
+Reinforcement Learning
+
+Algorithms:
+
+Linear/Logistic Regression
+
+SVM
+
+Decision Trees / Random Forests
+
+K-Means Clustering
+
+Neural Networks
+
+9. Deep Learning
+
+Deep Learning uses neural networks with multiple layers.
+
+Core Concepts:
+
+Neuron: y = activation(Wx + b)
+
+Backpropagation: weight optimization
+
+Optimizers: SGD, Adam
+
+Architectures: CNN, RNN, Transformer
+
+10. NLP (Natural Language Processing)
+
+NLP focuses on making machines understand human language.
+
+Key techniques:
+
+Tokenization
+
+Lemmatization / Stemming
+
+Word Embeddings (Word2Vec, GloVe)
+
+Transformers (BERT, GPT)
+
+Applications: Chatbots, Sentiment analysis, Machine translation.
+
+
+🌱 DATA STRUCTURES & ALGORITHMS – COMPLETE GUIDE
+1. Arrays
+
+Arrays are contiguous blocks of memory used to store a fixed-size sequence of elements of the same type.
+
+Key Properties
+
+Indexed from 0 to n-1.
+
+Constant-time random access (O(1)).
+
+Fixed size (cannot grow dynamically without reallocation).
+
+Common Operations
+Operation	Time Complexity	Description
+Traversal	O(n)	Visit every element
+Search	O(n) / O(log n)	Linear or Binary Search
+Insertion	O(n)	Shift elements
+Deletion	O(n)	Shift elements back
+Example (Python)
+arr = [1, 3, 5, 7, 9]
+for x in arr:
+    print(x)
+
+Applications
+
+Lookup tables
+
+Dynamic programming storage
+
+Implementing matrices and grids
+
+2. Linked Lists
+
+A Linked List is a collection of nodes connected by pointers.
+Each node stores data and a reference to the next node.
+
+Types
+
+Singly Linked List: Each node points to the next.
+
+Doubly Linked List: Each node points to both previous and next.
+
+Circular Linked List: The last node links to the first.
+
+Advantages
+
+Dynamic size
+
+Fast insertion/deletion (if node known)
+
+Disadvantages
+
+No random access
+
+Extra memory for pointers
+
+Example
+class Node:
+    def __init__(self, val):
+        self.val = val
+        self.next = None
+
+3. Stacks
+
+A Stack is a LIFO (Last In, First Out) structure.
+
+Operations
+
+push(x) → Insert element
+
+pop() → Remove top element
+
+peek() → See top element
+
+isEmpty() → Check if empty
+
+Applications
+
+Undo/Redo
+
+Parentheses Matching
+
+DFS traversal
+
+Function Call Stack
+
+stack = []
+stack.append(5)
+top = stack.pop()
+
+4. Queues
+
+A Queue follows FIFO (First In, First Out).
+
+Types
+
+Simple Queue
+
+Circular Queue
+
+Priority Queue
+
+Deque (Double-Ended Queue)
+
+Applications: Scheduling, BFS traversal, buffer management.
+
+from collections import deque
+q = deque()
+q.append(10)
+q.popleft()
+
+5. Trees
+
+A Tree is a hierarchical structure with nodes.
+
+Key Terms
+
+Root: topmost node
+
+Leaf: node with no children
+
+Depth: distance from root
+
+Height: length of longest path
+
+Binary Tree Traversals
+
+Inorder (LNR)
+
+Preorder (NLR)
+
+Postorder (LRN)
+
+Level Order (BFS)
+
+Binary Search Tree (BST)
+
+Left child < Parent < Right child
+
+Search/Insert/Delete in O(log n) average.
+
+6. Heaps
+
+Heaps are complete binary trees used for priority-based tasks.
+
+Types
+
+Min-Heap → parent ≤ children
+
+Max-Heap → parent ≥ children
+
+Use Cases: Priority Queues, Dijkstra’s Algorithm.
+
+7. Graphs
+
+Graphs represent relationships between entities.
+
+Types
+
+Directed / Undirected
+
+Weighted / Unweighted
+
+Cyclic / Acyclic
+
+Representations
+
+Adjacency Matrix: O(V²)
+
+Adjacency List: O(V + E)
+
+Common Algorithms
+
+BFS / DFS
+
+Dijkstra’s Shortest Path
+
+Bellman-Ford
+
+Floyd-Warshall
+
+Kruskal / Prim (MST)
+
+Topological Sort
+
+Union-Find
+
+8. Hashing
+
+Hash Tables map keys to values using a hash function.
+
+Properties
+
+O(1) average lookup
+
+Collisions resolved by:
+
+Chaining
+
+Open Addressing
+
+Example:
+
+hash_map = {}
+hash_map["a"] = 1
+
+9. Sorting Algorithms
+
+Sorting rearranges data in a specified order.
+
+Algorithm	Time	Space	Stable	Notes
+Bubble Sort	O(n²)	O(1)	✅	Simple
+Insertion Sort	O(n²)	O(1)	✅	Efficient for small arrays
+Merge Sort	O(n log n)	O(n)	✅	Divide & Conquer
+Quick Sort	O(n log n)	O(log n)	❌	Random pivot avoids worst case
+Heap Sort	O(n log n)	O(1)	❌	Uses heap
+10. Searching Algorithms
+
+Linear Search: O(n)
+
+Binary Search: O(log n) (sorted arrays)
+
+Interpolation Search: O(log log n)
+
+Exponential Search: O(log n)
+
+11. Dynamic Programming
+
+Breaks problems into overlapping subproblems.
+
+Steps
+
+Define subproblem structure.
+
+Write recurrence relation.
+
+Use memoization or tabulation.
+
+Common DP Problems
+
+Fibonacci Sequence
+
+0/1 Knapsack
+
+Longest Increasing Subsequence
+
+Matrix Chain Multiplication
+
+Edit Distance
+
+12. Greedy Algorithms
+
+Greedy algorithms make locally optimal choices.
+
+Examples:
+
+Fractional Knapsack
+
+Huffman Encoding
+
+Prim’s / Kruskal’s Algorithm
+
+Dijkstra’s Shortest Path
+
+13. Backtracking
+
+Explores all possible solutions by recursion and backtracking.
+
+Examples:
+
+N-Queens Problem
+
+Sudoku Solver
+
+Subset Sum
+
+Permutations
+
+🤖 MACHINE LEARNING CONCEPTS
+1. Supervised Learning
+
+Training with labeled data.
+
+Types:
+
+Regression (continuous output)
+
+Classification (discrete output)
+
+Algorithms:
+
+Linear/Logistic Regression
+
+Decision Trees
+
+Random Forests
+
+SVM
+
+KNN
+
+Gradient Boosting (XGBoost, LightGBM)
+
+2. Unsupervised Learning
+
+Training with unlabeled data.
+
+Types:
+
+Clustering (K-Means, DBSCAN)
+
+Dimensionality Reduction (PCA)
+
+Association Rules (Apriori)
+
+3. Neural Networks
+
+Artificial neurons simulate biological ones.
+
+Core Concepts:
+
+Layers: Input, Hidden, Output
+
+Activation Functions: ReLU, Sigmoid, Tanh, Softmax
+
+Loss Functions: MSE, Cross-Entropy
+
+Optimizers: SGD, Adam, RMSProp
+
+Backpropagation for weight updates
+
+4. Deep Learning
+
+Involves multiple hidden layers.
+
+Architectures:
+
+CNN: Image processing
+
+RNN/LSTM: Sequential data
+
+Transformer: Attention-based sequence modeling
+
+Autoencoders: Dimensionality reduction
+
+5. NLP (Natural Language Processing)
+
+Deals with understanding human language.
+
+Key Concepts:
+
+Tokenization, Lemmatization, POS tagging
+
+Bag of Words, TF-IDF
+
+Word2Vec, GloVe
+
+Transformers (BERT, GPT)
+
+Applications: Summarization, Translation, Sentiment Analysis, Chatbots
+
+6. Reinforcement Learning
+
+Agent learns via interaction with environment.
+
+Core Concepts:
+
+Agent, Environment, Reward
+
+Policy, Value Function
+
+Q-Learning, Deep Q Networks (DQN)
+
+💡 Computer Science Fundamentals
+
+OOP Concepts: Encapsulation, Inheritance, Polymorphism, Abstraction
+
+Operating Systems: Scheduling, Deadlocks, Paging
+
+DBMS: Normalization, SQL Queries, Indexing
+
+Networking: OSI model, TCP/IP, Routing
+
+System Design: Scalability, Caching, Load Balancing
+
+🌱 DATA STRUCTURES & ALGORITHMS – COMPLETE GUIDE
+1. Arrays
+
+Arrays are contiguous blocks of memory used to store a fixed-size sequence of elements of the same type.
+
+Key Properties
+
+Indexed from 0 to n-1.
+
+Constant-time random access (O(1)).
+
+Fixed size (cannot grow dynamically without reallocation).
+
+Common Operations
+Operation	Time Complexity	Description
+Traversal	O(n)	Visit every element
+Search	O(n) / O(log n)	Linear or Binary Search
+Insertion	O(n)	Shift elements
+Deletion	O(n)	Shift elements back
+Example (Python)
+arr = [1, 3, 5, 7, 9]
+for x in arr:
+    print(x)
+
+Applications
+
+Lookup tables
+
+Dynamic programming storage
+
+Implementing matrices and grids
+
+2. Linked Lists
+
+A Linked List is a collection of nodes connected by pointers.
+Each node stores data and a reference to the next node.
+
+Types
+
+Singly Linked List: Each node points to the next.
+
+Doubly Linked List: Each node points to both previous and next.
+
+Circular Linked List: The last node links to the first.
+
+Advantages
+
+Dynamic size
+
+Fast insertion/deletion (if node known)
+
+Disadvantages
+
+No random access
+
+Extra memory for pointers
+
+Example
+class Node:
+    def __init__(self, val):
+        self.val = val
+        self.next = None
+
+3. Stacks
+
+A Stack is a LIFO (Last In, First Out) structure.
+
+Operations
+
+push(x) → Insert element
+
+pop() → Remove top element
+
+peek() → See top element
+
+isEmpty() → Check if empty
+
+Applications
+
+Undo/Redo
+
+Parentheses Matching
+
+DFS traversal
+
+Function Call Stack
+
+stack = []
+stack.append(5)
+top = stack.pop()
+
+4. Queues
+
+A Queue follows FIFO (First In, First Out).
+
+Types
+
+Simple Queue
+
+Circular Queue
+
+Priority Queue
+
+Deque (Double-Ended Queue)
+
+Applications: Scheduling, BFS traversal, buffer management.
+
+from collections import deque
+q = deque()
+q.append(10)
+q.popleft()
+
+5. Trees
+
+A Tree is a hierarchical structure with nodes.
+
+Key Terms
+
+Root: topmost node
+
+Leaf: node with no children
+
+Depth: distance from root
+
+Height: length of longest path
+
+Binary Tree Traversals
+
+Inorder (LNR)
+
+Preorder (NLR)
+
+Postorder (LRN)
+
+Level Order (BFS)
+
+Binary Search Tree (BST)
+
+Left child < Parent < Right child
+
+Search/Insert/Delete in O(log n) average.
+
+6. Heaps
+
+Heaps are complete binary trees used for priority-based tasks.
+
+Types
+
+Min-Heap → parent ≤ children
+
+Max-Heap → parent ≥ children
+
+Use Cases: Priority Queues, Dijkstra’s Algorithm.
+
+7. Graphs
+
+Graphs represent relationships between entities.
+
+Types
+
+Directed / Undirected
+
+Weighted / Unweighted
+
+Cyclic / Acyclic
+
+Representations
+
+Adjacency Matrix: O(V²)
+
+Adjacency List: O(V + E)
+
+Common Algorithms
+
+BFS / DFS
+
+Dijkstra’s Shortest Path
+
+Bellman-Ford
+
+Floyd-Warshall
+
+Kruskal / Prim (MST)
+
+Topological Sort
+
+Union-Find
+
+8. Hashing
+
+Hash Tables map keys to values using a hash function.
+
+Properties
+
+O(1) average lookup
+
+Collisions resolved by:
+
+Chaining
+
+Open Addressing
+
+Example:
+
+hash_map = {}
+hash_map["a"] = 1
+
+9. Sorting Algorithms
+
+Sorting rearranges data in a specified order.
+
+Algorithm	Time	Space	Stable	Notes
+Bubble Sort	O(n²)	O(1)	✅	Simple
+Insertion Sort	O(n²)	O(1)	✅	Efficient for small arrays
+Merge Sort	O(n log n)	O(n)	✅	Divide & Conquer
+Quick Sort	O(n log n)	O(log n)	❌	Random pivot avoids worst case
+Heap Sort	O(n log n)	O(1)	❌	Uses heap
+10. Searching Algorithms
+
+Linear Search: O(n)
+
+Binary Search: O(log n) (sorted arrays)
+
+Interpolation Search: O(log log n)
+
+Exponential Search: O(log n)
+
+11. Dynamic Programming
+
+Breaks problems into overlapping subproblems.
+
+Steps
+
+Define subproblem structure.
+
+Write recurrence relation.
+
+Use memoization or tabulation.
+
+Common DP Problems
+
+Fibonacci Sequence
+
+0/1 Knapsack
+
+Longest Increasing Subsequence
+
+Matrix Chain Multiplication
+
+Edit Distance
+
+12. Greedy Algorithms
+
+Greedy algorithms make locally optimal choices.
+
+Examples:
+
+Fractional Knapsack
+
+Huffman Encoding
+
+Prim’s / Kruskal’s Algorithm
+
+Dijkstra’s Shortest Path
+
+13. Backtracking
+
+Explores all possible solutions by recursion and backtracking.
+
+Examples:
+
+N-Queens Problem
+
+Sudoku Solver
+
+Subset Sum
+
+Permutations
+
+🤖 MACHINE LEARNING CONCEPTS
+1. Supervised Learning
+
+Training with labeled data.
+
+Types:
+
+Regression (continuous output)
+
+Classification (discrete output)
+
+Algorithms:
+
+Linear/Logistic Regression
+
+Decision Trees
+
+Random Forests
+
+SVM
+
+KNN
+
+Gradient Boosting (XGBoost, LightGBM)
+
+2. Unsupervised Learning
+
+Training with unlabeled data.
+
+Types:
+
+Clustering (K-Means, DBSCAN)
+
+Dimensionality Reduction (PCA)
+
+Association Rules (Apriori)
+
+3. Neural Networks
+
+Artificial neurons simulate biological ones.
+
+Core Concepts:
+
+Layers: Input, Hidden, Output
+
+Activation Functions: ReLU, Sigmoid, Tanh, Softmax
+
+Loss Functions: MSE, Cross-Entropy
+
+Optimizers: SGD, Adam, RMSProp
+
+Backpropagation for weight updates
+
+4. Deep Learning
+
+Involves multiple hidden layers.
+
+Architectures:
+
+CNN: Image processing
+
+RNN/LSTM: Sequential data
+
+Transformer: Attention-based sequence modeling
+
+Autoencoders: Dimensionality reduction
+
+5. NLP (Natural Language Processing)
+
+Deals with understanding human language.
+
+Key Concepts:
+
+Tokenization, Lemmatization, POS tagging
+
+Bag of Words, TF-IDF
+
+Word2Vec, GloVe
+
+Transformers (BERT, GPT)
+
+Applications: Summarization, Translation, Sentiment Analysis, Chatbots
+
+6. Reinforcement Learning
+
+Agent learns via interaction with environment.
+
+Core Concepts:
+
+Agent, Environment, Reward
+
+Policy, Value Function
+
+Q-Learning, Deep Q Networks (DQN)
+
+💡 Computer Science Fundamentals
+
+OOP Concepts: Encapsulation, Inheritance, Polymorphism, Abstraction
+
+Operating Systems: Scheduling, Deadlocks, Paging
+
+DBMS: Normalization, SQL Queries, Indexing
+
+Networking: OSI model, TCP/IP, Routing
+
+System Design: Scalability, Caching, Load Balancing
