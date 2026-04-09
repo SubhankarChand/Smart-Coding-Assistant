@@ -27,15 +27,15 @@ A specialized, LeetCode-style AI coding assistant built to help engineering stud
 ```Bash
 python -m venv venv
 ```
-# Activate venv 
+3. **Activate venv**
 ```bash
 (Windows: venv\Scripts\activate | Mac/Linux: source venv/bin/activate)
 ```
-# Downloads Requirements library
+## Downloads Requirements library
 ```bash
 pip install -r requirements.txt
 ```
-# Set up API Keys:
+## Set up API Keys:
 Create a .env file in the root directory and add your Google Gemini API key:
 ```bash
 GOOGLE_API_KEY="your_api_key_here"
