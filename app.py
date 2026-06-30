@@ -16,7 +16,10 @@ from langchain_classic.agents import (
     AgentExecutor,
     create_tool_calling_agent,
 )
-from langchain_classic import hub
+from langchain_core.prompts import (
+    ChatPromptTemplate,
+    MessagesPlaceholder,
+)
 
 from langchain_text_splitters import RecursiveCharacterTextSplitter
 from langchain_core.tools import create_retriever_tool
@@ -115,18 +118,23 @@ tools = [
     search_tool,
 ]
 
-prompt = hub.pull("hwchase17/openai-tools-agent")
-
-prompt.messages[0] = SystemMessage(
-    content="""
-You are an expert coding interview assistant.
+prompt = ChatPromptTemplate.from_messages(
+    [
+        (
+            "system",
+            """You are an expert coding interview assistant.
 
 Always search the RAG documents first for DSA questions.
 
-If not found, use web search.
+If the answer is not available, use web search.
 
-Prefer hints before giving full solutions.
-"""
+Provide hints before giving the final solution.
+""",
+        ),
+        MessagesPlaceholder(variable_name="chat_history"),
+        ("human", "{input}"),
+        MessagesPlaceholder(variable_name="agent_scratchpad"),
+    ]
 )
 
 agent = create_tool_calling_agent(
