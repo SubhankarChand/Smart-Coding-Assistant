@@ -22,18 +22,26 @@ A specialized, LeetCode-style AI coding assistant built to help engineering stud
    ```bash
    git clone [https://github.com/yourusername/your-repo-name.git](https://github.com/yourusername/your-repo-name.git)
    cd your-repo-name
-Create a virtual environment and install dependencies:
-
-Bash
-python -m venv venv
-# Activate venv (Windows: venv\Scripts\activate | Mac/Linux: source venv/bin/activate)
-pip install -r requirements.txt
-Set up API Keys:
+   
+2. **Create a virtual environment and install dependencies:**
+  ```bash
+   python -m venv venv
+  ```
+3. **Activate venv**
+ ```bash
+  (Windows: venv\Scripts\activate | Mac/Linux: source venv/bin/activate)
+ ```
+## Downloads Requirements library
+ ```bash
+  pip install -r requirements.txt
+ ```
+## Set up API Keys:
 Create a .env file in the root directory and add your Google Gemini API key:
+```bash
+  GOOGLE_API_KEY="your_api_key_here"
+```
 
-Code snippet
-GOOGLE_API_KEY="your_api_key_here"
-Run the Application:
-
-Bash
-streamlit run app.py
+## Run the Application:
+```bash
+  streamlit run app.py
+```
