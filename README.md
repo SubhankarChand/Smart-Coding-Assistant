@@ -2,6 +2,8 @@
 
 A specialized, LeetCode-style AI coding assistant built to help engineering students prepare for technical interviews. This application utilizes a Retrieval-Augmented Generation (RAG) architecture to search custom Data Structures and Algorithms (DSA) study guides before falling back to live web searches.
 
+## Live Use- https://smart-coding-assistant-cucqzselq3p8jngpgun6a3.streamlit.app/
+
 ## 🚀 Features
 * **Custom Knowledge Base (RAG):** Answers are grounded in custom `.txt` files using FAISS vector embeddings, ensuring specific, curated advice for interview problems.
 * **Multi-Tool AI Agent:** The agent decides dynamically whether to query local documents or search the live internet (via DuckDuckGo) based on the user's prompt.
